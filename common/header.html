@@ -48,13 +48,72 @@
       );
     }
   });
-
-  api.decorateWidget(linksPosition, helper => {
+  
+  
+ api.decorateWidget(linksPosition, helper => {
     return helper.h(
       "ul.custom-header-links", headerLinks
     );
   });
 
+/*Try-free dropdown menu in header*/ 
+const dropdownMenu = [];
+
+  dropdownMenu.push(
+        h(
+          `li.dd-try-free`, 
+          h(
+            "a",
+            {
+                href: 'https://tech.forums.softwareag.com/t/adabas-natural-ce-for-docker-download/235228',
+                target: "_blank"
+            },
+          "Adabas & Natural CE for Docker"
+          )
+        ),
+         h(
+          `li.dd-try-free`, 
+           h(
+            "a",
+            {
+                href: 'https://tech.forums.softwareag.com/t/webmethods-integration-free-trial-download/235077',
+                target: "_blank"
+            },
+          "webMethods Integration"
+          )
+        ),
+         h(
+          `li.dd-try-free`, 
+           h(
+            "a",
+            {
+                href: 'https://tech.forums.softwareag.com/t/webmethods-service-designer-download/235227',
+                target: "_blank"
+            },
+          "webMethods Service Designer"
+          )
+        ),
+         h(
+          `li.dd-try-free`, 
+           h(
+            "a",
+            {
+                href: 'http://techcommunity.softwareag.com/ecosystem/communities/public/contents/downloads/index.html#Software-AG-Cloud-Downloads',
+                target: "_blank"
+            },
+          "Software AG Cloud"
+          )
+        )
+      );
+
+ api.decorateWidget(linksPosition, helper => {
+    return helper.h(
+      "ul.dropdown-try-free-menu", dropdownMenu
+    );
+  });
+  
+ /*End try-free dropdown menu in header*/  
+ 
   api.decorateWidget("home-logo:after", helper => {
     let titleVisible = helper.attrs.minimized;
     if (titleVisible) {
@@ -64,3 +123,4 @@
     }
   });
 </script>
+
